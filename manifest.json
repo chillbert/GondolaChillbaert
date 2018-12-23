@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Gondola+Chillbärt",
+  "version": "1.0",
+  "description": "Gondola Genuss und Chillbärt Hirço chillen das Leben.",
+  "icons":{
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  "web_accessible_resources": ["img/*.gif","img/*.png", "img/*.jpg","music/*.mp3"]
+  ,
+  "page_action": {
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html",
+    "default_title": "Downloader"
+  },
+  "background":{
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://pr0gramm.com/*","<all_urls>"],
+      "js": ["content.js", "jquery-3.2.1.min.js","throwable.js", "rainyday.min.js", "sweetalert.min.js","tilt.jquery.min.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self'; default-src 'self' https://pr0gramm.com",
+  "permissions": [
+    "storage",
+    "notifications",
+    "tabs",
+    "downloads"
+    //"webRequest",
+    ]
+}
