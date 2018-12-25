@@ -75,6 +75,7 @@ chrome.runtime.onMessage.addListener(function(req,send,res){
     var bush_url = chrome.extension.getURL('./img/bush.png');
     var krebs_url = chrome.extension.getURL('./img/krebs.gif');
     var hausb_url = chrome.extension.getURL('./img/haus_b1.png');
+    var chillbaert_url = chrome.extension.getURL('./img/chillbaert.png');
     var hausf_url = chrome.extension.getURL('./img/haus_f.png');
     var rauch_url = chrome.extension.getURL('./img/rauch.gif');
     var schmuser_url = chrome.extension.getURL('./img/schmuser.jpg');
@@ -506,9 +507,9 @@ chrome.runtime.onMessage.addListener(function(req,send,res){
           }
 
           recognition.start();
-
           $body.append("<img src='"+hausb_url+"' style='bottom: 0px; position:fixed; z-index:9; left:0px;-webkit-filter: brightness(1.4) contrast(1.3); filter: brightness(1.1) contrast(1.3);' class='haus'>");
           $body.append("<img src='"+hausf_url+"' style='bottom: 0px; position:fixed; z-index:999; left:0px;-webkit-filter: brightness(1.4) contrast(1.3); filter: brightness(1.1) contrast(1.3);' class='haus'>");
+          $body.append("<img src='"+chillbaert_url+"' style='bottom: 200px; position:fixed; z-index:999; left:150px; width: 130px;' class='haus'>");
           $rauch = $('<img src='+rauch_url+' class="rauch">');
           $rauch.css({
             'z-index': 999,
